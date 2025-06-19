@@ -9,12 +9,12 @@ export default function Home() {
         const fetchClasses= async ()=>{
             try{
                 const classSnapshot= await getDocs(collection(db,"classes"))
-                console.log(classSnapshot)
+                //console.log(classSnapshot)
                 const classList=classSnapshot.docs.map(doc=>({
                     id:doc.id,
                     ...doc.data()
                 }))
-                console.log(classList)
+                //console.log(classList)
                 setClasses(classList)
             }
             catch(err){
@@ -25,7 +25,7 @@ export default function Home() {
         fetchClasses()
     },[])
     function handleClassClick(classId){
-        console.log("classid for marking attendance",classId)
+        //console.log("classid for marking attendance",classId)
         localStorage.setItem("selectedClassId",classId)
         navigate("/attendance")
     }
