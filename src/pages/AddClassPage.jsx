@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import {db} from '../services/firebase'
 import {collection,addDoc} from 'firebase/firestore'
+import Swal from 'sweetalert2'
 
 export default function AddClassPage() {
     const [className, setClassName] = useState("")
@@ -23,7 +24,11 @@ export default function AddClassPage() {
                 name:className,
                 students:students
             })
-            alert("Class added successfully")
+            Swal.fire({
+                title: "Students & Class!",
+                text: "Students added for this class!",
+                icon: "success"
+            });
             navigate("/")
         }
         catch(err){
@@ -40,6 +45,7 @@ export default function AddClassPage() {
                         <input 
                             className="form-control" 
                             type="text" 
+                            placeholder='Ex:Branch name'
                             required
                             value={className}
                             onChange={(e)=>setClassName(e.target.value)}/>
@@ -47,8 +53,8 @@ export default function AddClassPage() {
                     <h5>Students</h5>
                     {
                         students.map((student,index)=>(
-                            <div className='row mb-3' key={index}>
-                                <div className="col">
+                            <div className='row row-cols-2 row-cols-md-3 mb-3' key={index}>
+                                <div className="col mb-3">
                                     <input 
                                         type="text" 
                                         className='form-control'
@@ -84,7 +90,7 @@ export default function AddClassPage() {
                             Add Another Student
                     </button>
                     <br />
-                    <button className='btn btn-outline-success'>Save Class</button>
+                    <button className='btn btn-outline-success mb-5'>Save Class</button>
                 </form>
             </div>
             
