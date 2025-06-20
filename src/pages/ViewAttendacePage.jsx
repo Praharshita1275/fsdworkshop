@@ -51,7 +51,7 @@ export default function ViewAttendacePage() {
     <div className="container mt-3">
       <h2 className='mb-2'>View Attendance</h2>
       <div className="row">
-        <div className='col-md-4'>
+        <div className='col-md-4 mt-3'>
           <label className='form-label'>Select Class:</label>
           <select
             className='form-select'
@@ -66,7 +66,7 @@ export default function ViewAttendacePage() {
           </select>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-md-4 mt-3">
           <label className='form-label'>Select Date</label>
           <input
             type="date"
@@ -75,7 +75,7 @@ export default function ViewAttendacePage() {
             onChange={(e) => setSelectedDate(e.target.value)} />
         </div>
 
-        <div className='col-md-4 d-flex align-items-end'>
+        <div className='col-md-4 mt-3 d-flex align-items-end'>
           <button onClick={fetchAttendance} className='btn btn-success w-25'>Submit</button>
         </div>
       </div>
