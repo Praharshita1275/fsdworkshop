@@ -80,13 +80,12 @@ export default function ViewAttendacePage() {
         </div>
       </div>
       {
-        selectedClassId &&selectedDate && students.length > 0 &&attendanceData.length===0 &&(
+        selectedClassId &&selectedDate && students.length === 0 &&attendanceData.length===0 &&(
           <div className='col-12 mt-3'>
             No attendance found for the selected date
           </div>
         )
       }
-      
       {
         students.length>0 && attendanceData.length>0 &&(
           <div className='table-responsive mt-3'>
