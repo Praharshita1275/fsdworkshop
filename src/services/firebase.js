@@ -1,22 +1,18 @@
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 import {getFirestore} from 'firebase/firestore'
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyBelW8a56XHO429HY8rt20rQfMsK1WZ8D4",
-  authDomain: "fsdworkshop.firebaseapp.com",
-  projectId: "fsdworkshop",
-  storageBucket: "fsdworkshop.firebasestorage.app",
-  messagingSenderId: "610640269050",
-  appId: "1:610640269050:web:db65148f654354e7a70343",
-  measurementId: "G-JGJV6ZFH62"
+  apiKey: "AIzaSyC_jXMnwL9TOGxKir8KySHMlEudrpUOUp4",
+  authDomain: "attendencesystem-bf222.firebaseapp.com",
+  projectId: "attendencesystem-bf222",
+  storageBucket: "attendencesystem-bf222.firebasestorage.app",
+  messagingSenderId: "549430660983",
+  appId: "1:549430660983:web:c3cd81c6996184ce371b72"
 };
 
-
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const db=getFirestore(app)
 export {db}
